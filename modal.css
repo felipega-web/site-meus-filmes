@@ -1,0 +1,116 @@
+:root {
+  --primary-color: #03045e;
+  --light-primary: #0b498f;
+  --lightest-color: #caf0f8;
+  --secondary-color: #00b4d8;
+  --light-secondary: #90e0ef;
+}
+
+#modal-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  visibility: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+#modal-background {
+  background-color: var(--light-primary);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.4;
+}
+
+#modal-container {
+  z-index: 1;
+  background-color: var(--lightest-color);
+  padding: 2rem 4.5rem;
+  border-radius: 1rem;
+}
+
+#modal-title {
+  padding: 2rem 0;
+}
+
+#modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+#movie-poster {
+  border-radius: 1rem;
+}
+
+#movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 30rem;
+  margin-left: 1rem;
+}
+
+#add-to-list {
+  all: unset;
+  cursor: pointer;
+  border: 0.2rem solid var(--light-primary);
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  padding: 1.4rem;
+  width: 100%;
+  font-weight: 600;
+}
+
+#add-to-list:hover,
+#add-to-list:active {
+  background-color: var(--light-primary);
+  color: var(--lightest-color);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 766px) {
+  #modal-container {
+    flex-direction: column;
+  }
+
+  #modal-title {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  #modal-body {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #movie-poster {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  #movie-cast,
+  #movie-genre {
+    margin-top: 1rem;
+  }
+
+  #add-to-list {
+    margin-top: 1.75rem;
+    padding: 1rem;
+    width: 20rem;
+  }
+}
