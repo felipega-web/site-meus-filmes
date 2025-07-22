@@ -26,7 +26,7 @@ async function searchButtonClickHandler() {
       movieYear = `&y=${movieYear}`;
     }
 
-    let url = ` http://www.omdbapi.com/?i=tt3896198&apikey=${key}&t=${movieName}${movieYear}`;
+    let url = ` https://www.omdbapi.com/?i=tt3896198&apikey=${key}&t=${movieName}${movieYear}`;
     const response = await fetch(url);
     const data = await response.json();
 
